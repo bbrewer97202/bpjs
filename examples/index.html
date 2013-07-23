@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<h1>BPJS</h1>
+
+<h3>Example exclusive breakpoints</h3>
+<ul>
+    <li><strong>one:</strong> screen and (max-width:539px)</li>
+    <li><strong>two:</strong> screen and (min-width:540px) and (max-width:679px)</li>
+    <li><strong>three:</strong> screen and (min-width:680px) and (max-width:899px)</li>
+    <li><strong>four:</strong> screen and (min-width:900px)</li>
+</ul>
+
+<div id="debug" style="padding: 1em; background-color: #eee"></div>
+
+
+<script type="text/javascript" src="../bpjs.js"></script>
+<script type="text/javascript">
+
+BPJS.init({
+    one: 'screen and (max-width:539px)',
+    two: 'screen and (min-width:540px) and (max-width:679px)',
+    three: 'screen and (min-width:680px) and (max-width:899px)',
+    four: 'screen and (min-width:900px)'
+}, function(id) {    
+    console.log("BPJS.mediaQueries: " + BPJS.mediaQueries());
+    document.getElementById('debug').innerHTML = "breakpoint: " + id;
+});
+
+</script>
+
+</body>
+</html>
